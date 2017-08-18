@@ -1,1 +1,10 @@
 <h1>meme index working</h1>
+
+
+<div class="center">
+  <h2>Meme List</h2>
+  <div class="meme" ng-repeat="meme in vm.memes | orderBy:'-created_at'">
+    <h4>{{meme.text}}</h4>
+    <img ng-src="{{meme.img_url}}" alt="{{meme.text}}">
+  </div>
+</div>
