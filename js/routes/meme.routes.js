@@ -15,6 +15,12 @@
       controllerAs: 'vm',
       templateUrl: 'js/ng-views/index.html'
     })
+    .state('memeShow', {
+      url: '/memes/:id',
+      controller: 'MemeShowController',
+      controllerAs: 'vm',
+      templateUrl: 'js/ng-views/show.html'
+    })
     $urlRouterProvider.otherwise('/memes')
   }
 })()
