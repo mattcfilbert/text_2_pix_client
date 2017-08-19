@@ -10,12 +10,12 @@
   .controller('MemeShowController', [
     '$stateParams',
     'Meme',
-    GrumbleShowControllerFunction
+    MemeShowControllerFunction
   ])
   function MemeIndexControllerFunction ($state, Meme) {
     this.memes = Meme.query()
   }
-  function GrumbleShowControllerFunction ($stateParams, Meme) {
+  function MemeShowControllerFunction ($stateParams, Meme) {
     this.meme = Meme.get({ id: $stateParams.id })
   }
 })()
