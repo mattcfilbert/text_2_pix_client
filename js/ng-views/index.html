@@ -8,3 +8,12 @@
     <img ng-src="{{meme.img_url}}" alt="{{meme.text}}">
   </div>
 </div>
+
+
+<h2>new meme</h2>
+
+<form>
+  <input placeholder="text" data-ng-model="vm.newMeme.text" />
+  <input placeholder="picture" data-ng-model="vm.newMeme.img_url" />
+  <button type="submit" data-ng-click="vm.create()">Create</button>
+</form>
