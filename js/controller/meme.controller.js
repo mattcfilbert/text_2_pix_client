@@ -15,7 +15,6 @@
     'Meme',
     'Comment',
     'Photo',
-    'funnyText',
     MemeShowControllerFunction
   ])
   function MemeIndexControllerFunction ($state, Meme, Photo) {
@@ -32,16 +31,12 @@
       })
     }
   }
-  function MemeShowControllerFunction ($window, $state, $stateParams, Meme, Comment, Photo, funnyText) {
+  function MemeShowControllerFunction ($window, $state, $stateParams, Meme, Comment, Photo) {
     this.meme = Meme.get({ id: $stateParams.id })
     this.meme.comments = Meme.get({ id: $stateParams.id }).comments
     this.newComment = new Comment()
 
     this.photo = Photo.get()
-    this.newText = funnyText.query().advice
-    // this.newNewText = this.newText.slip.advice
-    console.log(this.newText);
-
 
     this.createComment = function () {
       this.newComment.meme_id = this.meme.id
@@ -51,18 +46,17 @@
     }
 
     this.editComment = function (comId) {
-    const comment = this.meme.comments.find(function (comment){
-      return comment.id === comId
-    })
-    Comment.update({id: comId}, comment)
+      const comment = this.meme.comments.find(function (comment) {
+        return comment.id === comId
+      })
+      Comment.update({id: comId}, comment)
     }
 
-
     this.deleteComment = function (comId) {
-    const comment = this.meme.comments.find(function (comment){
-      return comment.id === comId
-    })
-    Comment.destroy({id: comId}, comment)
+      const comment = this.meme.comments.find(function (comment) {
+        return comment.id === comId
+      })
+      Comment.destroy({id: comId}, comment)
     }
 
     this.edit = function () {
@@ -76,14 +70,12 @@
       })
     }
     this.newPhoto = function () {
-      this.randomPhotoUrl = this.photo.images[Math.floor(Math.random() * this.photo.images.length)].url
+      this.randomPhotoUrl = this.photo.data.memes[Math.floor(Math.random() * this.photo.data.memes.length)].url
       this.meme.img_url = this.randomPhotoUrl
       this.meme.$update({ id: $state.params.id })
       $window.location.reload()
-
     }
     this.newText = function () {
-
       this.meme.$update({ id: $state.params.id })
       $window.location.reload()
     }
