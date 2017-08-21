@@ -14,10 +14,7 @@
     '$stateParams',
     'Meme',
     'Comment',
-<<<<<<< HEAD
-=======
     'Photo',
->>>>>>> cdd8480736bf1f6dc7ef45267f7a48b7d59f2fdc
     MemeShowControllerFunction
   ])
   function MemeIndexControllerFunction ($state, Meme, Photo) {
