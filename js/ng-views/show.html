@@ -4,6 +4,7 @@
     <h3><span>{{vm.meme.text}}</span></h3>
     <img ng-src="{{vm.meme.img_url}}" alt="{{vm.meme.text}}">
   </div>
+  <button data-ng-click="vm.newPhoto()">new photo</button>
 
   <p>Comments</p>
   <div ng-repeat="comment in vm.meme.comments">
@@ -21,4 +22,3 @@
     <button type="submit" data-ng-click="vm.edit()">Edit</button>
     <button type="delete" data-ng-click="vm.delete()">Delete</button>
   </form>
-  <button data-ng-click="vm.newPhoto()">new photo</button>
