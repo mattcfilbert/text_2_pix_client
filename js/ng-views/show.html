@@ -15,19 +15,16 @@
   <button data-ng-click="vm.newPhoto()">new photo</button>
 
   <p>Comments</p>
-  <div ng-repeat="comment in vm.meme.comments|limitTo:1">
+  <div ng-repeat="comment in vm.meme.comments| orderBy: '-created_at'|limitTo:1">
     <p>{{comment.text}}</p>
-    <input ng-show="editComment" ng-change="vm.editComment()" placeholder="comment" data-ng-model="comment.text">
+    <input ng-show="editComment" ng-change="vm.editComment(comment.id)" placeholder="comment" data-ng-model="comment.text">
     <button ng-click="editComment = !editComment">Edit</button>
   </div>
-  <div ng-show="viewComments" ng-repeat="comment in vm.meme.comments" ng-if="$index > 0">
+  <div ng-show="viewComments" ng-repeat="comment in vm.meme.comments | orderBy: '-created_at'" ng-if="$index > 0">
     <p>{{comment.text}}</p>
-    <input ng-show="editComment" ng-change="vm.editComment()" placeholder="comment" data-ng-model="comment.text">
+    <input ng-show="editComment" ng-change="vm.editComment(comment.id)" placeholder="comment" data-ng-model="comment.text">
     <button ng-click="editComment = !editComment">Edit</button>
   </div>
   <button ng-click="viewComments = !viewComments">Toggle Comments</button>
-  <input type="text" placeholder="comment" data-ng-model="vm.newComment.text">
-  <button type="submit" data-ng-click="vm.createComment()">new comment</button>
-    
   <input type="text" placeholder="comment" data-ng-model="vm.newComment.text">
   <button type="submit" data-ng-click="vm.createComment()">new comment</button>
