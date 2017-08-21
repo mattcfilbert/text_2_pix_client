@@ -43,6 +43,15 @@
         $window.location.reload()
       })
     }
+
+    this.editComment = function () {
+      console.log(this.meme.comments.length)
+      console.log(this.meme.comments[0].id)
+      for (var i = 0; i < this.meme.comments.length; i++) {
+        this.meme.comments[i].$update({id: this.meme.comments[i].id})
+      }
+    }
+
     this.edit = function () {
       this.meme.$update({ id: $state.params.id }, () => {
         $window.location.reload()
