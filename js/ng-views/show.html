@@ -1,13 +1,4 @@
 <h2>show working</h2>
-<h3>{{vm.meme.text}}</h3>
-<img ng-src="{{vm.meme.img_url}}" alt="{{vm.meme.text}}">
-<p>here:</p>
-<div ng-repeat="comment in vm.meme.comments">
-<p>{{comment.text}}</p>
-<input ng-show="editComment" ng-change="vm.editComment()" placeholder="comment" data-ng-model="comment.text">
-
-<button ng-click="editComment = !editComment">Edit</button>
-</div>
 
   <div class="show_image">
     <h3><span>{{vm.meme.text}}</span></h3>
@@ -17,7 +8,8 @@
   <p>Comments</p>
   <div ng-repeat="comment in vm.meme.comments">
   <p>{{comment.text}}</p>
-  <input type="text" placeholder="comment" data-ng-model="comment.text">
+  <input ng-show="editComment" ng-change="vm.editComment()" placeholder="comment" data-ng-model="comment.text">
+  <button ng-click="editComment = !editComment">Edit</button>
   </div>
 
   <input type="text" placeholder="comment" data-ng-model="vm.newComment.text">
@@ -29,3 +21,4 @@
     <button type="submit" data-ng-click="vm.edit()">Edit</button>
     <button type="delete" data-ng-click="vm.delete()">Delete</button>
   </form>
+  <button data-ng-click="vm.newPhoto()">new photo</button>
