@@ -4,7 +4,11 @@
 <p>here:</p>
 <div ng-repeat="comment in vm.meme.comments">
 <p>{{comment.text}}</p>
+<input placeholder="comment" data-ng-model="comment.text">
 </div>
+
+<input placeholder="comment" data-ng-model="vm.newComment.text">
+<button type="submit" data-ng-click="vm.createComment()">new comment</button>
 
 <form>
   <input placeholder="text" data-ng-model="vm.meme.text" />
