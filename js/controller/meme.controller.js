@@ -14,7 +14,6 @@
     '$stateParams',
     'Meme',
     'Comment',
-    '$scope',
     MemeShowControllerFunction
   ])
   function MemeIndexControllerFunction ($state, Meme, Photo) {
@@ -29,7 +28,7 @@
       })
     }
   }
-  function MemeShowControllerFunction ($window, $state, $stateParams, Meme, Comment, $scope) {
+  function MemeShowControllerFunction ($window, $state, $stateParams, Meme, Comment) {
     this.meme = Meme.get({ id: $stateParams.id })
     this.meme.comments = Meme.get({ id: $stateParams.id }).comments
     this.newComment = new Comment()
@@ -39,6 +38,14 @@
       this.newComment.$save(() => {
         $window.location.reload()
       })
+    }
+
+    this.editComment = function () {
+      console.log(this.meme.comments.length)
+      console.log(this.meme.comments[0].id)
+      for (var i = 0; i < this.meme.comments.length; i++) {
+        this.meme.comments[i].$update({id: this.meme.comments[i].id})
+      }
     }
 
     this.edit = function () {
