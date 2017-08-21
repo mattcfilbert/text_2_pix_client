@@ -63,10 +63,9 @@
       })
     }
     this.newPhoto = function () {
-      this.randomPhotoUrl = this.photo.images[Math.floor(Math.random() * this.photo.images.length)].url
+      this.randomPhotoUrl = this.photo.data.memes[Math.floor(Math.random() * this.photo.data.memes.length)].url
       this.meme.img_url = this.randomPhotoUrl
       this.meme.$update({ id: $state.params.id })
-      console.log(this.photo.images.length);
       $window.location.reload()
     }
   }
