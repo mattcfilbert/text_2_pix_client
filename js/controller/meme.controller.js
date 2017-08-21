@@ -15,6 +15,7 @@
     'Meme',
     'Comment',
     'Photo',
+    'funnyText',
     MemeShowControllerFunction
   ])
   function MemeIndexControllerFunction ($state, Meme, Photo) {
@@ -24,19 +25,24 @@
     this.newMeme = new Meme()
 
     this.create = function () {
-      this.randomPhotoUrl = this.createPhoto.images[Math.floor(Math.random() * this.createPhoto.images.length)].url
+      this.randomPhotoUrl = this.createPhoto.data.memes[Math.floor(Math.random() * this.createPhoto.data.memes.length)].url
       this.newMeme.img_url = this.randomPhotoUrl
       this.newMeme.$save((newMeme) => {
         $state.go('memeShow', {id: newMeme.id})
       })
     }
   }
-  function MemeShowControllerFunction ($window, $state, $stateParams, Meme, Comment, Photo) {
+  function MemeShowControllerFunction ($window, $state, $stateParams, Meme, Comment, Photo, funnyText) {
     this.meme = Meme.get({ id: $stateParams.id })
     this.meme.comments = Meme.get({ id: $stateParams.id }).comments
     this.newComment = new Comment()
 
     this.photo = Photo.get()
+    this.newText = funnyText.query().advice
+    // this.newNewText = this.newText.slip.advice
+    console.log(this.newText);
+
+
     this.createComment = function () {
       this.newComment.meme_id = this.meme.id
       this.newComment.$save(() => {
@@ -65,6 +71,11 @@
     this.newPhoto = function () {
       this.randomPhotoUrl = this.photo.data.memes[Math.floor(Math.random() * this.photo.data.memes.length)].url
       this.meme.img_url = this.randomPhotoUrl
+      this.meme.$update({ id: $state.params.id })
+      $window.location.reload()
+    }
+    this.newText = function () {
+
       this.meme.$update({ id: $state.params.id })
       $window.location.reload()
     }
