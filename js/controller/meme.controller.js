@@ -45,17 +45,18 @@
     }
 
     this.editComment = function (comId) {
-    console.log(comId)
     const comment = this.meme.comments.find(function (comment){
       return comment.id === comId
     })
-    // this.comment = Comment.get({id: comId}).$promise.then(function (comment){
-    //   this.comment.$update({ id: comId})
-    // })
-    console.log(comment)
-    console.log(comment.text)
     Comment.update({id: comId}, comment)
+    }
 
+
+    this.deleteComment = function (comId) {
+    const comment = this.meme.comments.find(function (comment){
+      return comment.id === comId
+    })
+    Comment.destroy({id: comId}, comment)
     }
 
     this.edit = function () {
