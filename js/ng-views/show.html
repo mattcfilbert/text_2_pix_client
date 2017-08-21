@@ -4,7 +4,8 @@
 <p>here:</p>
 <div ng-repeat="comment in vm.meme.comments">
 <p>{{comment.text}}</p>
-<input placeholder="comment" data-ng-model="comment.text">
+<input ng-show="editComment" placeholder="comment" data-ng-model="comment.text">
+<button ng-click="editComment = !editComment">Edit</button>
 </div>
 
 <input placeholder="comment" data-ng-model="vm.newComment.text">
@@ -16,3 +17,5 @@
   <button type="submit" data-ng-click="vm.edit()">Edit</button>
   <button type="delete" data-ng-click="vm.delete()">Delete</button>
 </form>
+
+<button type="submit" data-ng-click="vm.newPhoto()">new photo</button>
