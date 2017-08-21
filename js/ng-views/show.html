@@ -1,0 +1,14 @@
+<h2>show working</h2>
+<h3>{{vm.meme.text}}</h3>
+<img ng-src="{{vm.meme.img_url}}" alt="{{vm.meme.text}}">
+<p>here:</p>
+<div ng-repeat="comment in vm.meme.comments">
+<p>{{comment.text}}</p>
+</div>
+
+<form>
+  <input placeholder="text" data-ng-model="vm.meme.text" />
+  <input placeholder="img_url" data-ng-model="vm.meme.img_url" />
+  <button type="submit" data-ng-click="vm.edit()">Edit</button>
+  <button type="delete" data-ng-click="vm.delete()">Delete</button>
+</form>
