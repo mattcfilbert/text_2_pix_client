@@ -1,4 +1,4 @@
-.meme {
+/*.meme {
   background-color: gray;
   border: 1px solid black;
   width: 50%;
@@ -15,13 +15,69 @@
 
 nav {
   text-align: center;
+}*/
+img {
+  width: 300px;
+  height: 300px;
 }
 
-img {
+ .show_image {
+  position: relative;
+  background-color: blue;
+  width: 100%;
+}
+
+.show_image h3 {
+  position: absolute;
+  top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.show_image h3 span {
+  color: white;
+  font: bold 24px Helvetica, Sans_Serif;
+  letter-spacing: -1px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+
+input[type=text] {
+    display: block;
+    width: 20%;
+    padding: 12px 20px;
+    margin: 5px;
+    box-sizing: border-box;
+    border: 4px solid #990099;
+    border-radius: 4px;
+}
+
+button {
+  background-color: #4CAF50;
+  border-radius: 2px;
+  color: white;
+  padding: 15px 32px;
+  margin: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+/*textarea {
+    display: block;
+    width: 20%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 4px solid #990099;
+    border-radius: 4px;
+    resize: none;
+}*/
+/*img {
   height: 300px;
   margin: 0 auto;
 }
 
 body {
   text-align: center;
-}
+}*/
