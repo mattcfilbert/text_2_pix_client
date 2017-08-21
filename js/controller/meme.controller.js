@@ -44,12 +44,18 @@
       })
     }
 
-    this.editComment = function () {
-      console.log(this.meme.comments.length)
-      console.log(this.meme.comments[0].id)
-      for (var i = 0; i < this.meme.comments.length; i++) {
-        this.meme.comments[i].$update({id: this.meme.comments[i].id})
-      }
+    this.editComment = function (comId) {
+    console.log(comId)
+    const comment = this.meme.comments.find(function (comment){
+      return comment.id === comId
+    })
+    // this.comment = Comment.get({id: comId}).$promise.then(function (comment){
+    //   this.comment.$update({ id: comId})
+    // })
+    console.log(comment)
+    console.log(comment.text)
+    Comment.update({id: comId}, comment)
+
     }
 
     this.edit = function () {
@@ -63,10 +69,11 @@
       })
     }
     this.newPhoto = function () {
-      this.randomPhotoUrl = this.photo.data.memes[Math.floor(Math.random() * this.photo.data.memes.length)].url
+      this.randomPhotoUrl = this.photo.images[Math.floor(Math.random() * this.photo.images.length)].url
       this.meme.img_url = this.randomPhotoUrl
       this.meme.$update({ id: $state.params.id })
       $window.location.reload()
+
     }
   }
 })()
