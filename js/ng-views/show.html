@@ -1,9 +1,3 @@
-<h2>show working</h2>
-<h3>{{vm.meme.text}}</h3>
-<img ng-src="{{vm.meme.img_url}}" alt="{{vm.meme.text}}">
-<p>here:</p>
-<div ng-repeat="comment in vm.meme.comments">
-<p>{{comment.text}}</p>
 <input ng-show="editComment" ng-change="vm.editComment()" placeholder="comment" data-ng-model="comment.text">
 
 <button ng-click="editComment = !editComment">Edit</button>
