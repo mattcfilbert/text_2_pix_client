@@ -16,7 +16,7 @@
     })
   }
   function Photo ($resource) {
-    return $resource('http://www.splashbase.co/api/v1/images/random?images_only=true', {}, {
+    return $resource('http://www.splashbase.co/api/v1/images/latest?images_only=true', {}, {
       update: { method: 'GET' }
     })
   }
