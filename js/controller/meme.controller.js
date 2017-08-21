@@ -33,11 +33,13 @@
   }
   function MemeShowControllerFunction ($window, $state, $stateParams, Meme, Comment, Photo) {
     this.meme = Meme.get({ id: $stateParams.id })
+    this.meme.comments = Meme.get({ id: $stateParams.id }).comments
     this.newComment = new Comment()
 
     this.photo = Photo.get()
     this.createComment = function () {
-      this.newComment.$save((newComment) => {
+      this.newComment.meme_id = this.meme.id
+      this.newComment.$save(() => {
         $window.location.reload()
       })
     }
