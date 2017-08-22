@@ -15,6 +15,7 @@
     'Meme',
     'Comment',
     'Photo',
+    'funnyText',
     MemeShowControllerFunction
   ])
   function MemeIndexControllerFunction ($state, Meme, Photo) {
@@ -31,11 +32,13 @@
       })
     }
   }
-  function MemeShowControllerFunction ($window, $state, $stateParams, Meme, Comment, Photo) {
+  function MemeShowControllerFunction ($window, $state, $stateParams, Meme, Comment, Photo, funnyText) {
     this.meme = Meme.get({ id: $stateParams.id })
     this.meme.comments = Meme.get({ id: $stateParams.id }).comments
     this.newComment = new Comment()
 
+    this.newText = funnyText.get()
+    console.log(this.newText)
     this.photo = Photo.get()
     this.createComment = function () {
       this.newComment.meme_id = this.meme.id
