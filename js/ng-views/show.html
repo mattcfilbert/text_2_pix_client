@@ -1,4 +1,6 @@
-<h2>show working</h2>
+<p>Select Meme</p>
+<select ng-model="vm.dropDownPhoto" ng-options="meme.name for meme in vm.photo.data.memes" ng-change="vm.dropPhoto()">
+</select>
 
   <div class="show_image">
     <h3><span>{{vm.meme.text}}</span></h3>
