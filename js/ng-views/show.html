@@ -1,4 +1,6 @@
-<h2>show working</h2>
+<p>Select Meme</p>
+<select ng-model="vm.dropDownPhoto" ng-options="meme.name for meme in vm.photo.data.memes" ng-change="vm.dropPhoto()">
+</select>
 
   <div class="show_image">
     <h3><span>{{vm.meme.text}}</span></h3>
@@ -13,6 +15,9 @@
   </form>
 
   <button data-ng-click="vm.newPhoto()">new photo</button>
+  <button data-ng-click="vm.newText()">text</button>
+  <button data-ng-click="vm.catPicture()">Cat!</button>
+
 
   <p>Comments</p>
   <div ng-repeat="comment in vm.meme.comments| orderBy: '-created_at'|limitTo:1">
@@ -26,5 +31,7 @@
     <button ng-click="editComment = !editComment">Edit</button>
   </div>
   <button ng-click="viewComments = !viewComments">Toggle Comments</button>
+
+
   <input type="text" placeholder="comment" data-ng-model="vm.newComment.text">
   <button type="submit" data-ng-click="vm.createComment()">new comment</button>
