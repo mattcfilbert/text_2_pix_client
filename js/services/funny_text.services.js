@@ -2,13 +2,13 @@
 (function () {
   angular
   .module('dankMemes')
-  .factory('funnyText', [
+  .factory('Text', [
     '$resource',
-    funnyText
+    Text
   ])
-  function funnyText ($resource) {
-    return $resource('http://api.adviceslip.com/advice', {}, {
-      update: {method: 'GET'}
+  function Text ($resource) {
+    return $resource('http://api.icndb.com/jokes', {}, {
+      update: { method: 'GET' }
     })
   }
 })()
