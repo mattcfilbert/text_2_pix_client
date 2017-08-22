@@ -1,6 +1,9 @@
+<h2>show working</h2>
 <p>Select Meme</p>
 <select ng-model="vm.dropDownPhoto" ng-options="meme.name for meme in vm.photo.data.memes" ng-change="vm.dropPhoto()">
 </select>
+
+
 
   <div class="show_image">
     <h3><span>{{vm.meme.text}}</span></h3>
@@ -23,12 +26,17 @@
   <div ng-repeat="comment in vm.meme.comments| orderBy: '-created_at'|limitTo:1">
     <p>{{comment.text}}</p>
     <input ng-show="editComment" ng-change="vm.editComment(comment.id)" placeholder="comment" data-ng-model="comment.text">
+
     <button ng-click="editComment = !editComment">Edit</button>
+    <button type="delete" data-ng-click="vm.deleteComment(comment.id)">Delete</button>
+
   </div>
   <div ng-show="viewComments" ng-repeat="comment in vm.meme.comments | orderBy: '-created_at'" ng-if="$index > 0">
     <p>{{comment.text}}</p>
     <input ng-show="editComment" ng-change="vm.editComment(comment.id)" placeholder="comment" data-ng-model="comment.text">
     <button ng-click="editComment = !editComment">Edit</button>
+    <button type="delete" data-ng-click="vm.deleteComment(comment.id)">Delete</button>
+
   </div>
   <button ng-click="viewComments = !viewComments">Toggle Comments</button>
 
