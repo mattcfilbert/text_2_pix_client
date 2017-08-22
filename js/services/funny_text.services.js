@@ -7,7 +7,7 @@
     Text
   ])
   function Text ($resource) {
-    return $resource('http://api.icndb.com/jokes', {}, {
+    return $resource('https://icanhazdadjoke.com/slack', {}, {
       update: { method: 'GET' }
     })
   }

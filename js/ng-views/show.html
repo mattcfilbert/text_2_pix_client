@@ -14,6 +14,8 @@
 
   <button data-ng-click="vm.newPhoto()">new photo</button>
   <button data-ng-click="vm.newText()">text</button>
+  <button data-ng-click="vm.catPicture()">Cat!</button>
+
 
   <p>Comments</p>
   <div ng-repeat="comment in vm.meme.comments| orderBy: '-created_at'|limitTo:1">

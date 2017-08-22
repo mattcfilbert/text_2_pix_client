@@ -16,6 +16,7 @@
     'Comment',
     'Photo',
     'Text',
+    'Cat',
     MemeShowControllerFunction
   ])
   function MemeIndexControllerFunction ($state, Meme, Photo) {
@@ -32,13 +33,14 @@
       })
     }
   }
-  function MemeShowControllerFunction ($window, $state, $stateParams, Meme, Comment, Photo, Text) {
+  function MemeShowControllerFunction ($window, $state, $stateParams, Meme, Comment, Photo, Text, Cat) {
     this.meme = Meme.get({ id: $stateParams.id })
     this.meme.comments = Meme.get({ id: $stateParams.id }).comments
     this.newComment = new Comment()
 this.funnyText = Text.get()
     this.photo = Photo.get()
-    console.log(this.photo.data);
+    this.newCat = Cat.get()
+
 
     this.createComment = function () {
       this.newComment.meme_id = this.meme.id
@@ -79,10 +81,17 @@ this.funnyText = Text.get()
       // $window.location.reload()
     }
     this.newText = function () {
-
-      this.newText = this.funnyText.value[Math.floor(Math.random() * this.funnyText.value.length)].joke
+console.log(this.funnyText.attachments[0].fallback);
+      this.newText = this.funnyText.attachments[Math.floor(Math.random() * this.funnyText.attachments.length)].fallback
       this.meme.text = this.newText
       this.meme.$update({ id: $state.params.id })
+      $window.location.reload()
+    }
+    this.catPicture = function () {
+      this.meme.img_url = this.newCat.file
+      console.log(this.newCat.file);
+      this.meme.$update({ id: $state.params.id })
+
       $window.location.reload()
     }
   }
