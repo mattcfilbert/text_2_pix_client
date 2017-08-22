@@ -95,6 +95,8 @@
     }
     this.dropPhoto = function () {
       this.meme.img_url = this.dropDownPhoto.url
+      this.meme.$update({ id: $state.params.id })
+      $window.location.reload()
     }
   }
 })()
