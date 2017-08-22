@@ -37,10 +37,9 @@
     this.meme = Meme.get({ id: $stateParams.id })
     this.meme.comments = Meme.get({ id: $stateParams.id }).comments
     this.newComment = new Comment()
-this.funnyText = Text.get()
+    this.funnyText = Text.get()
     this.photo = Photo.get()
     this.newCat = Cat.get()
-
 
     this.createComment = function () {
       this.newComment.meme_id = this.meme.id
@@ -75,13 +74,13 @@ this.funnyText = Text.get()
     }
     this.newPhoto = function () {
       this.randomPhotoUrl = this.photo.data.memes[Math.floor(Math.random() * this.photo.data.memes.length)].url
-      console.log(this.photo.data);
+      console.log(this.photo.data)
       this.meme.img_url = this.randomPhotoUrl
       this.meme.$update({ id: $state.params.id })
       // $window.location.reload()
     }
     this.newText = function () {
-console.log(this.funnyText.attachments[0].fallback);
+      console.log(this.funnyText.attachments[0].fallback)
       this.newText = this.funnyText.attachments[Math.floor(Math.random() * this.funnyText.attachments.length)].fallback
       this.meme.text = this.newText
       this.meme.$update({ id: $state.params.id })
@@ -89,10 +88,13 @@ console.log(this.funnyText.attachments[0].fallback);
     }
     this.catPicture = function () {
       this.meme.img_url = this.newCat.file
-      console.log(this.newCat.file);
+      console.log(this.newCat.file)
       this.meme.$update({ id: $state.params.id })
 
       $window.location.reload()
+    }
+    this.dropPhoto = function () {
+      this.meme.img_url = this.dropDownPhoto.url
     }
   }
 })()
