@@ -17,8 +17,8 @@ nav {
   text-align: center;
 }*/
 img {
-  width: 300px;
-  height: 300px;
+  max-width: 500px;
+  min-width: 400px;
 }
 
  .show_image {
