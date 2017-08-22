@@ -63,9 +63,7 @@
     }
 
     this.edit = function () {
-      this.meme.$update({ id: $state.params.id }, () => {
-        $window.location.reload()
-      })
+      this.meme.$update({ id: $state.params.id })
     }
     this.delete = function () {
       this.meme.$delete({ id: $state.params.id }, () => {
@@ -77,7 +75,7 @@
       console.log(this.photo.data)
       this.meme.img_url = this.randomPhotoUrl
       this.meme.$update({ id: $state.params.id })
-      // $window.location.reload()
+      $window.location.reload()
     }
     this.newText = function () {
       console.log(this.funnyText.attachments[0].fallback)

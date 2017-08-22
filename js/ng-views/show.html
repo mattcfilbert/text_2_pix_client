@@ -1,5 +1,12 @@
+<!-- <button ng-click="searchBar = !searchBar">See all memes</button>
+<br>
+<select ng-show="searchBar" ng-model="vm.dropDownPhoto" ng-options="meme.name for meme in vm.photo.data.memes | filter:searchText" ng-change="vm.dropPhoto()">
+<br> -->
 <p>Select Meme</p>
-<select ng-model="vm.dropDownPhoto" ng-options="meme.name for meme in vm.photo.data.memes" ng-change="vm.dropPhoto()">
+<label>Filter: <input ng-model="searchText"></label>
+<button ng-click="searchBar2 = !searchBar2">Search</button>
+<br>
+<select ng-show="searchBar2" ng-model="vm.dropDownPhoto" ng-options="meme.name for meme in vm.photo.data.memes | filter:searchText" ng-change="vm.dropPhoto()">
 </select>
 
   <div class="show_image">
@@ -8,9 +15,9 @@
   </div>
 
   <form>
-    <input type="text" placeholder="text" data-ng-model="vm.meme.text" />
-    <input type="text" placeholder="img_url" data-ng-model="vm.meme.img_url" />
-    <button type="submit" data-ng-click="vm.edit()">Edit</button>
+    <input type="text" ng-change="vm.edit()" placeholder="text" data-ng-model="vm.meme.text" />
+    <input type="text" ng-change="vm.edit()" placeholder="img_url" data-ng-model="vm.meme.img_url" />
+    <button type="dummy">Edit</button>
     <button type="delete" data-ng-click="vm.delete()">Delete</button>
   </form>
 
