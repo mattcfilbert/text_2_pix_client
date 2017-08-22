@@ -55,7 +55,7 @@
       const comment = this.meme.comments.find(function (comment) {
         return comment.id === comId
       })
-      Comment.destroy({id: comId}, comment)
+      Comment.delete({id: comId}, comment)
     }
 
     this.edit = function () {
