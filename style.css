@@ -27,19 +27,17 @@ body {
   background-position: center;
 }*/
 
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 15px;
+}
 .comment {
   border: 1px solid black;
   padding: 1em;
   background: #eee;
 }
-
-/*img {
-  min-width: 300px;
-  min-height: 400px;
-  max-height: 600px;
-  max-width: 550px;
-}*/
-
 
 .show_image {
   display: flex;

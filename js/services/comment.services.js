@@ -7,7 +7,7 @@
     Comment
   ])
   function Comment ($resource) {
-    return $resource('http://localhost:3000/comments/:id', {}, {
+    return $resource('https://meme-gen-api.herokuapp.com/comments/:id', {}, {
       update: { method: 'PUT' }
     })
   }
