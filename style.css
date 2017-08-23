@@ -21,9 +21,10 @@ body {
   background-position: center;
 }*/
 
-img {
-  max-width: 500px;
-  min-width: 400px;
+.comment {
+  border: 1px solid black;
+  padding: 1em;
+  background: #eee;
 }
 
 
