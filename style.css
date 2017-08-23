@@ -30,12 +30,14 @@ body {
   border: 1px solid black;
   padding: 1em;
   background: #eee;
-img {
+}
+
+/*img {
   min-width: 300px;
   min-height: 400px;
   max-height: 600px;
   max-width: 550px;
-}
+}*/
 
 
 .show_image {
@@ -161,11 +163,6 @@ a:hover {
   background-color: #99ff99;
 }
 
-.comment {
-  border: 1px solid black;
-  padding: 1em;
-  background: #eee;
-}
 /*main {
   flex: 1;
 }
