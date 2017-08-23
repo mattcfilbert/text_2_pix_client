@@ -21,13 +21,17 @@ body {
   background-position: center;
 }*/
 
-img {
+/*img {
   min-width: 300px;
   min-height: 400px;
   max-height: 600px;
   max-width: 550px;
+}*/
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 15px;
 }
-
 
 .show_image {
   display: flex;
