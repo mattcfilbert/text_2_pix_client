@@ -1,7 +1,8 @@
+
 <div class="show_page">
 
-  <p>Select Meme</p>
-  <label>Filter: <input ng-model="searchText"></label>
+<p>Select Meme</p>
+<label>Filter: <input ng-model="searchText"></label>
 <button ng-click="searchBar = true">Search</button>
 <button ng-click="searchText = ''; searchBar = true">List All Meme</button>
 <br>
@@ -9,24 +10,27 @@
 <option value="">-- Choose a Meme! --</option>
 </select>
 
-  <!-- <div ng-style = "{'background-image': 'url(' + vm.meme.img_url + ')'}"> -->
+
+
   <div class="show_image">
       <h3><span>{{vm.meme.text}}</span><br><br></h3>
       <img ng-src="{{vm.meme.img_url}}" alt="{{vm.meme.text}}">
   </div>
 
-  <div class ="edit_memes">
-    <form>
-      <input type="text" placeholder="text" data-ng-model="vm.meme.text" />
-      <input type="text" placeholder="img_url" data-ng-model="vm.meme.img_url" />
-      <button type="submit" data-ng-click="vm.edit()">Edit</button>
-      <button type="delete" data-ng-click="vm.delete()">Delete</button>
-    </form>
 
-    <button data-ng-click="vm.newPhoto()">new photo</button>
-    <button data-ng-click="vm.newText()">text</button>
-    <button data-ng-click="vm.catPicture()">Cat!</button>
+  <div class ="edit_memes">
+  <form>
+    <input type="text" ng-change="vm.edit()" placeholder="text" data-ng-model="vm.meme.text" />
+    <input type="text" ng-change="vm.edit()" placeholder="img_url" data-ng-model="vm.meme.img_url" />
+    <button type="dummy">Edit</button>
+    <button type="delete" data-ng-click="vm.delete()">Delete</button>
+  </form>
+
+  <button data-ng-click="vm.newPhoto()">new photo</button>
+  <button data-ng-click="vm.newText()">text</button>
+  <button data-ng-click="vm.catPicture()">Cat!</button>
   </div>
+
 
 
   <div class="comments">
