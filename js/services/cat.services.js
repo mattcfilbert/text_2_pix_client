@@ -8,7 +8,7 @@
   ])
   function Cat ($resource) {
     return $resource('https://random.cat/meow', {}, {
-      update: { method: 'PUT' }
+      update: { method: 'GET' }
     })
   }
 })()
