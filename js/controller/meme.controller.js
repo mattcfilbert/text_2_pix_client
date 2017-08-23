@@ -24,7 +24,7 @@
     this.photo = Photo.get()
     this.createPhoto = Photo.get()
     this.newMeme = new Meme()
-    this.yourMemes = JSON.parse(window.sessionStorage.getItem('savedMemes')) || []
+    this.yourMemes = JSON.parse(window.sessionStorage.getItem('savedMemes')).reverse() || []
 
     this.addMeme = function (newMeme) {
       var existingMemes = JSON.parse(window.sessionStorage.getItem('savedMemes')) || []
