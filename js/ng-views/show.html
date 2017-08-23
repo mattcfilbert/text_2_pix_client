@@ -1,12 +1,10 @@
-<!-- <button ng-click="searchBar = !searchBar">See all memes</button>
-<br>
-<select ng-show="searchBar" ng-model="vm.dropDownPhoto" ng-options="meme.name for meme in vm.photo.data.memes | filter:searchText" ng-change="vm.dropPhoto()">
-<br> -->
 <p>Select Meme</p>
 <label>Filter: <input ng-model="searchText"></label>
-<button ng-click="searchBar2 = !searchBar2">Search</button>
+<button ng-click="searchBar = true">Search</button>
+<button ng-click="searchText = ''; searchBar = true">List All Meme</button>
 <br>
-<select ng-show="searchBar2" ng-model="vm.dropDownPhoto" ng-options="meme.name for meme in vm.photo.data.memes | filter:searchText" ng-change="vm.dropPhoto()">
+<select ng-show="searchBar" ng-model="vm.dropDownPhoto" ng-options="meme.name for meme in vm.photo.data.memes | filter:searchText" ng-change="vm.dropPhoto()">
+<option value="">-- Choose a Meme! --</option>
 </select>
 
 
