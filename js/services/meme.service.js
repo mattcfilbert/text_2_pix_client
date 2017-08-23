@@ -7,7 +7,7 @@
     Meme
   ])
   function Meme ($resource) {
-    return $resource('http://localhost:3000/memes/:id', {}, {
+    return $resource('https://meme-gen-api.herokuapp.com/memes/:id', {}, {
       update: { method: 'PUT' }
     })
   }

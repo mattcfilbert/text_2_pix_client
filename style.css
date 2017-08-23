@@ -26,12 +26,17 @@ body {
   background-position: center;
 }*/
 
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 15px;
+}
 .comment {
   border: 1px solid black;
   padding: 1em;
   background: #eee;
 }
-
 
 .show_image {
   display: flex;
