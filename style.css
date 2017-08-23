@@ -6,6 +6,7 @@
 img {
   width: 400px;
   height: 400px;
+  padding: 20px;
 }
 
 body {
@@ -62,17 +63,28 @@ footer {
   align-items: center;
   justify-content: center;
   color: white;
-  font: bold 16px Anton, Sans_Serif;
+  font: bold 20px Anton, Sans_Serif;
   letter-spacing: normal;
   /*background: rgb(0, 0, 0);*/
   background: rgba(0, 0, 0, 0.4);
   padding: 10px;
-  width: 60%;
+  margin-top: 20px;
+  width: 80%;
 }
 
 input[type=text] {
     display: inline-block;
-    width: 100%;
+    width: 80%;
+    padding: 12px 20px;
+    margin: 10px;
+    box-sizing: border-box;
+    border: 4px solid #ff9900;
+    border-radius: 4px;
+}
+
+input {
+    display: inline-block;
+    width: 40%;
     padding: 12px 20px;
     margin: 10px;
     box-sizing: border-box;
@@ -135,14 +147,15 @@ footer {
 
 h1 {
   font-family: 'Anton', sans-serif;
-  font-size: 24px;
+  font-size: 36px;
   font-weight: bold;
 }
 
 h2 {
   font-family: 'Anton', sans-serif;
-  font-size: 18px;
+  font-size: 24px;
   font-weight: bold;
+  color: #3399ff;
 
 }
 
@@ -154,13 +167,41 @@ h3 {
 
 a {
   text-decoration: none;
-  color: #ff9900;
+  color: #3399ff;
+  font-size: 20px;
+  font-family: 'Anton', sans-serif;
+  font-weight: 500;
+
 }
 
 a:hover {
-  background-color: #99ff99;
+  background-color: #ff9900;
 }
 
+.sig {
+  width: 100%;
+  height: 10%;
+  background-color: #ff9900;
+  font-family: 'Anton', sans-serif;
+  font-size: 12px;
+  color: white;
+}
+
+.comments {
+  margin: 50px;
+  padding: 30px;
+  border: 5px solid #ff9900;
+  border-radius: 10px;
+  background-color: #3399ff;
+}
+
+.edit_memes {
+  margin: 50px;
+  padding: 30px;
+  border: 5px solid #ff9900;
+  border-radius: 10px;
+  background-color: #3399ff;
+}
 /*main {
   flex: 1;
 }
