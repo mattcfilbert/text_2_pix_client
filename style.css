@@ -32,13 +32,6 @@ body {
   background: #eee;
 }
 
-/*img {
-  min-width: 300px;
-  min-height: 400px;
-  max-height: 600px;
-  max-width: 550px;
-}*/
-
 
 .show_image {
   display: flex;
