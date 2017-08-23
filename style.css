@@ -148,6 +148,12 @@ a {
 a:hover {
   background-color: #99ff99;
 }
+
+.comment {
+  border: 1px solid black;
+  padding: 1em;
+  background: #eee;
+}
 /*main {
   flex: 1;
 }

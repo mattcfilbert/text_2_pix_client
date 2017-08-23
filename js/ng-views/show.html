@@ -1,8 +1,13 @@
 <div class="show_page">
-  
+
   <p>Select Meme</p>
-  <select ng-model="vm.dropDownPhoto" ng-options="meme.name for meme in vm.photo.data.memes" ng-change="vm.dropPhoto()">
-  </select>
+  <label>Filter: <input ng-model="searchText"></label>
+<button ng-click="searchBar = true">Search</button>
+<button ng-click="searchText = ''; searchBar = true">List All Meme</button>
+<br>
+<select ng-show="searchBar" ng-model="vm.dropDownPhoto" ng-options="meme.name for meme in vm.photo.data.memes | filter:searchText" ng-change="vm.dropPhoto()">
+<option value="">-- Choose a Meme! --</option>
+</select>
 
   <!-- <div ng-style = "{'background-image': 'url(' + vm.meme.img_url + ')'}"> -->
   <div class="show_image">
@@ -25,21 +30,21 @@
 
 
   <div class="comments">
-    <h2>Comments</h2>
-    <div ng-repeat="comment in vm.meme.comments| orderBy: '-created_at'|limitTo:1">
-      <p>{{comment.text}}</p>
-      <input type="text" ng-show="editComment" ng-change="vm.editComment(comment.id)" placeholder="comment" data-ng-model="comment.text">
-      <button ng-click="editComment = !editComment">Edit</button>
-    </div>
-    <div ng-show="viewComments" ng-repeat="comment in vm.meme.comments | orderBy: '-created_at'" ng-if="$index > 0">
-      <p>{{comment.text}}</p>
-      <input type="text" ng-show="editComment" ng-change="vm.editComment(comment.id)" placeholder="comment" data-ng-model="comment.text">
-      <button ng-click="editComment = !editComment">Edit</button>
-    </div>
+      <input type="text" placeholder="comment" data-ng-model="vm.newComment.text">
+      <button type="submit" data-ng-click="vm.createComment()">new comment</button>
+      <h2>Comments</h2>
+        <button ng-click="viewComments = !viewComments">Toggle Comments</button>
+      <div class="comment" ng-repeat="comment in vm.meme.comments| orderBy: '-created_at'|limitTo:1">
+        <p>{{comment.text}}</p>
+        <button ng-click="editComment = !editComment">Edit</button>
+        <input type="text" ng-show="editComment" ng-change="vm.editComment(comment.id)" placeholder="comment" data-ng-model="comment.text">
 
-    <button ng-click="viewComments = !viewComments">Toggle Comments</button>
+      </div>
+      <div class="comment" ng-show="viewComments" ng-repeat="comment in vm.meme.comments | orderBy: '-created_at'" ng-if="$index > 0">
+        <p>{{comment.text}}</p>
+        <button ng-click="editComment = !editComment">Edit</button>
+        <input type="text" ng-show="editComment" ng-change="vm.editComment(comment.id)" placeholder="comment" data-ng-model="comment.text">
 
-    <input type="text" placeholder="comment" data-ng-model="vm.newComment.text">
-    <button type="submit" data-ng-click="vm.createComment()">new comment</button>
-  </div>
-</div>
+      </div>
+
+    </div>
