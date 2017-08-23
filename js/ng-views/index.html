@@ -2,9 +2,24 @@
   <h1>meme index working</h1>
 
   <h2>Meme List</h2>
-  <div class="meme" ng-repeat="meme in vm.memes | orderBy:'-created_at'">
-    <a ui-sref="memeShow({ id: meme.id })">{{meme.text}}</a>
-    <img ng-src="{{meme.img_url}}" alt="{{meme.text}}">
+  <div class="yourMemes">
+
+
+    <div class="meme" ng-repeat="meme in vm.yourMemes">
+      <a ui-sref="memeShow({ id: meme.id })">{{meme.text}}</a>
+      <img ng-src="{{meme.img_url}}" alt="{{meme.text}}">
+    </div>
+    
+  </div>
+  <div class="allMemes">
+
+    <h2>Meme List</h2>
+
+    <div class="meme" ng-repeat="meme in vm.memes | orderBy:'-created_at'">
+      <a ui-sref="memeShow({ id: meme.id })">{{meme.text}}</a>
+      <img ng-src="{{meme.img_url}}" alt="{{meme.text}}">
+    </div>
+
   </div>
 
   <h2>new meme</h2>
