@@ -31,12 +31,6 @@ body {
   padding: 1em;
   background: #eee;
 }
-img {
-  min-width: 300px;
-  min-height: 400px;
-  max-height: 600px;
-  max-width: 550px;
-}
 
 
 .show_image {
@@ -159,8 +153,9 @@ a {
 }
 
 a:hover {
-  background-color: blue;
+  background-color: #99ff99;
 }
+
 /*main {
   flex: 1;
 }
