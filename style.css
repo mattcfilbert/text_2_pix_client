@@ -6,6 +6,7 @@
 img {
   width: 400px;
   height: 400px;
+  padding: 20px;
 }
 
 body {
@@ -156,11 +157,15 @@ h3 {
 
 a {
   text-decoration: none;
-  color: #ff9900;
+  color: #3399ff;
+  font-size: 20px;
+  font-family: 'Anton', sans-serif;
+  font-weight: 500;
+
 }
 
 a:hover {
-  background-color: #99ff99;
+  background-color: #ff9900;
 }
 
 /*main {
