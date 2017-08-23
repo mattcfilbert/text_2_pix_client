@@ -1,3 +1,8 @@
+* {
+ margin: 0px;
+ padding: 0px;
+ }
+
 img {
   width: 400px;
   height: 400px;
@@ -21,16 +26,15 @@ body {
   background-position: center;
 }*/
 
-/*img {
-  min-width: 300px;
-  min-height: 400px;
-  max-height: 600px;
-  max-width: 550px;
-}*/
+
 footer {
   position: fixed;
   bottom: 0;
   left: 15px;
+.comment {
+  border: 1px solid black;
+  padding: 1em;
+  background: #eee;
 }
 
 .show_image {
@@ -48,7 +52,7 @@ footer {
   justify-content: center;
   position: absolute;
   line-height: 1.5em;
-  top: 20px;
+  top: 40px;
   width: 60%;
 }
 
@@ -57,8 +61,8 @@ footer {
   align-items: center;
   justify-content: center;
   color: white;
-  font: bold 14px Helvetica, Sans_Serif;
-  letter-spacing: -1px;
+  font: bold 16px Anton, Sans_Serif;
+  letter-spacing: normal;
   /*background: rgb(0, 0, 0);*/
   background: rgba(0, 0, 0, 0.4);
   padding: 10px;
@@ -84,6 +88,7 @@ button {
   text-align: center;
   text-decoration: none;
   font-size: 14px;
+  font-family: 'Anton', sans-serif;
 }
 
 .index_page {
@@ -101,6 +106,68 @@ button {
   align-items: center;
   justify-content: center;
 }
+
+/*.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}*/
+
+/*header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5%;
+  width: 100%;
+  background-color: #ff9900;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 10%;
+  width: 100%;
+  background-color: #ff9900;
+}*/
+
+h1 {
+  font-family: 'Anton', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: 'Anton', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
+h3 {
+  font-family: 'Anton', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  color: #ff9900;
+}
+
+a:hover {
+  background-color: #99ff99;
+}
+
+/*main {
+  flex: 1;
+}
+
+body {
+  margin: 0;
+}*/
+
 /*textarea {
     display: block;
     width: 20%;
