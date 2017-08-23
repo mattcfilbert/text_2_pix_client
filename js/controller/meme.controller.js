@@ -59,22 +59,18 @@
         $window.location.reload()
       })
     }
-
     this.editComment = function (comId) {
       const comment = this.meme.comments.find(function (comment) {
         return comment.id === comId
       })
       Comment.update({id: comId}, comment)
     }
-
     this.deleteComment = function (comId) {
       const comment = this.meme.comments.find(function (comment) {
         return comment.id === comId
       })
       Comment.delete({id: comId}, comment)
-      // $window.location.reload()
     }
-
     this.edit = function () {
       this.meme.$update({ id: $state.params.id })
     }
@@ -85,25 +81,20 @@
     }
     this.newPhoto = function () {
       this.randomPhotoUrl = this.photo.data.memes[Math.floor(Math.random() * this.photo.data.memes.length)].url
-      console.log(this.photo.data)
       this.meme.img_url = this.randomPhotoUrl
       this.meme.$update({ id: $state.params.id })
-      // $window.location.reload()
     }
     this.newText = function () {
-      console.log(this.funnyText.attachments[0].fallback)
-      this.funnyText = Text.get()
-      this.newText = this.funnyText.attachments[Math.floor(Math.random() * this.funnyText.attachments.length)].fallback
-      this.meme.text = this.newText
-      this.meme.$update({ id: $state.params.id })
-      // $window.location.reload()
+      this.meme.text = this.funnyText.attachments[0].fallback
+      this.meme.$update({ id: $state.params.id }, () => {
+        this.funnyText = Text.get()
+      })
     }
     this.catPicture = function () {
       this.meme.img_url = this.newCat.file
-      console.log(this.newCat.file)
-      this.meme.$update({ id: $state.params.id })
-
-      $window.location.reload()
+      this.meme.$update({ id: $state.params.id }, () => {
+        this.newCat = Cat.get()
+      })
     }
     this.dropPhoto = function () {
       this.meme.img_url = this.dropDownPhoto.url
