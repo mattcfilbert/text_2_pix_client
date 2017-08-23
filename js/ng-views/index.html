@@ -17,6 +17,7 @@
 
     </div>
     <div ng-show="yours" class="memes">
+      <button ng-click="vm.memeClear()">Clear your memes</button>
       <h2>Your Memes</h2>
       <div class="meme" ng-repeat="meme in vm.yourMemes">
         <a ui-sref="memeShow({ id: meme.id })">{{meme.text}}</a>
