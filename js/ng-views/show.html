@@ -1,10 +1,13 @@
 <div class="show_page">
-  <h2>show working</h2>
-  <div>
-    <div class="show_image">
-      <h3><span>{{vm.meme.text}}</span><br/></h3>
+
+  <p>Select Meme</p>
+  <select ng-model="vm.dropDownPhoto" ng-options="meme.name for meme in vm.photo.data.memes" ng-change="vm.dropPhoto()">
+  </select>
+
+  <!-- <div ng-style = "{'background-image': 'url(' + vm.meme.img_url + ')'}"> -->
+  <div class="show_image">
+      <h3><span>{{vm.meme.text}}</span><br><br></h3>
       <img ng-src="{{vm.meme.img_url}}" alt="{{vm.meme.text}}">
-    </div>
   </div>
 
   <div class ="edit_memes">
@@ -19,6 +22,7 @@
     <button data-ng-click="vm.newText()">text</button>
     <button data-ng-click="vm.catPicture()">Cat!</button>
   </div>
+
 
   <div class="comments">
     <h2>Comments</h2>
