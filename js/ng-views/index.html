@@ -1,18 +1,17 @@
-<h1>meme index working</h1>
+<div class="index_page">
+  <h1>meme index working</h1>
 
-<div class="center">
   <h2>Meme List</h2>
   <div class="meme" ng-repeat="meme in vm.memes | orderBy:'-created_at'">
     <a ui-sref="memeShow({ id: meme.id })">{{meme.text}}</a>
     <img ng-src="{{meme.img_url}}" alt="{{meme.text}}">
   </div>
+
+  <h2>new meme</h2>
+
+  <form>
+    <input placeholder="text" data-ng-model="vm.newMeme.text" />
+    <input placeholder="picture" data-ng-model="vm.newMeme.img_url" />
+    <button type="submit" data-ng-click="vm.create()">Create</button>
+  </form>
 </div>
-
-
-<h2>new meme</h2>
-
-<form>
-  <input placeholder="text" data-ng-model="vm.newMeme.text" />
-  <input placeholder="picture" data-ng-model="vm.newMeme.img_url" />
-  <button type="submit" data-ng-click="vm.create()">Create</button>
-</form>
