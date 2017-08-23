@@ -21,6 +21,12 @@ body {
   background-position: center;
 }*/
 
+img {
+  max-width: 500px;
+  min-width: 400px;
+}
+
+
 .show_image {
   display: flex;
   align-items: center;
