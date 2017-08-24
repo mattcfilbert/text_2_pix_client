@@ -24,13 +24,25 @@
     this.photo = Photo.get()
     this.createPhoto = Photo.get()
     this.newMeme = new Meme()
-    this.yourMemes = JSON.parse(window.sessionStorage.getItem('savedMemes')) || []
+    this.yourMemes = window.sessionStorage.getItem('savedMemes') || []
+    if (this.yourMemes === window.sessionStorage.getItem('savedMemes')) {
+      this.yourMemes = JSON.parse(window.sessionStorage.getItem('savedMemes'))
+    }
 
     this.addMeme = function (newMeme) {
-      var existingMemes = JSON.parse(window.sessionStorage.getItem('savedMemes')) || []
+      var existingMemes = window.sessionStorage.getItem('savedMemes') || []
+      console.log(existingMemes)
+      if (existingMemes === window.sessionStorage.getItem('savedMemes')) {
+        existingMemes = JSON.parse(window.sessionStorage.getItem('savedMemes'))
+      }
+      console.log(existingMemes)
       existingMemes.push(newMeme)
       this.yourMemes = existingMemes
       window.sessionStorage.setItem('savedMemes', JSON.stringify(existingMemes))
+    }
+
+    this.memeClear = function () {
+      window.sessionStorage.setItem('savedMemes', JSON.stringify([]))
     }
 
     this.create = function () {

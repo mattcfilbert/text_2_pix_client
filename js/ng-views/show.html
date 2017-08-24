@@ -33,21 +33,22 @@
 
 
   <div class="comments">
-      <input type="text" placeholder="comment" data-ng-model="vm.newComment.text">
-      <button type="submit" data-ng-click="vm.createComment()">new comment</button>
-      <h2>Comments</h2>
-        <button ng-click="viewComments = !viewComments">Toggle Comments</button>
-      <div class="comment" ng-repeat="comment in vm.meme.comments| orderBy: '-created_at'|limitTo:1">
-        <p>{{comment.text}}</p>
-        <button ng-click="editComment = !editComment">Edit</button>
-        <input type="text" ng-show="editComment" ng-change="vm.editComment(comment.id)" placeholder="comment" data-ng-model="comment.text">
-
-      </div>
-      <div class="comment" ng-show="viewComments" ng-repeat="comment in vm.meme.comments | orderBy: '-created_at'" ng-if="$index > 0">
-        <p>{{comment.text}}</p>
-        <button ng-click="editComment = !editComment">Edit</button>
-        <input type="text" ng-show="editComment" ng-change="vm.editComment(comment.id)" placeholder="comment" data-ng-model="comment.text">
-
-      </div>
+    <input type="text" placeholder="comment" data-ng-model="vm.newComment.text">
+    <button type="submit" data-ng-click="vm.createComment()">new comment</button>
+    <h2>Comments</h2>
+      <button ng-click="viewComments = !viewComments">Toggle Comments</button>
+    <div class="comment" ng-repeat="comment in vm.meme.comments| orderBy: '-created_at'|limitTo:1">
+      <p>{{comment.text}}</p>
+      <button ng-click="editComment = !editComment">Edit</button>
+      <input type="text" ng-show="editComment" ng-change="vm.editComment(comment.id)" placeholder="comment" data-ng-model="comment.text">
 
     </div>
+    <div class="comment" ng-show="viewComments" ng-repeat="comment in vm.meme.comments | orderBy: '-created_at'" ng-if="$index > 0">
+      <p>{{comment.text}}</p>
+      <button ng-click="editComment = !editComment">Edit</button>
+      <input type="text" ng-show="editComment" ng-change="vm.editComment(comment.id)" placeholder="comment" data-ng-model="comment.text">
+
+    </div>
+
+  </div>
+</div>
