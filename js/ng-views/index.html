@@ -2,27 +2,36 @@
   <h2>new meme</h2>
 
   <form>
-    <input placeholder="text" data-ng-model="vm.newMeme.text" />
-    <input placeholder="picture" data-ng-model="vm.newMeme.img_url" />
-    <button type="submit" data-ng-click="vm.create()">Create</button>
+    <div style="overflow: hidden; padding-right: .5em; float: left;">
+      <input placeholder="text" data-ng-model="vm.newMeme.text" />
+      <input placeholder="picture" data-ng-model="vm.newMeme.img_url" />
+
+
+
+    </div>
+    <button style="float: right" type="submit" data-ng-click="vm.create()">Create</button>
   </form>
 
+  <button type="submit" data-ng-click="vm.create()">Create</button>
   <button ng-click="yours = !yours">All/Your Memes</button>
     <div ng-hide="yours" class="memes">
-      <h2>Meme List</h2>
+      <h2 class="center">Meme List</h2>
+      <hr>
       <div class="meme" ng-repeat="meme in vm.memes | orderBy:'-created_at'">
         <a ui-sref="memeShow({ id: meme.id })">{{meme.text}}</a>
         <img ng-src="{{meme.img_url}}" alt="{{meme.text}}">
       </div>
-
     </div>
+
     <div ng-show="yours" class="memes">
-      <button ng-click="vm.memeClear()">Clear your memes</button>
-      <h2>Your Memes</h2>
-      <div class="meme" ng-repeat="meme in vm.yourMemes">
+      <div class="center">
+        <button ng-click="vm.memeClear()">Clear your memes</button>
+      </div>
+      <h2 class="center">Your Memes</h2>
+      <hr>
+      <div class="meme" ng-repeat="meme in vm.yourMemes | orderBy:'-created_at'">
         <a ui-sref="memeShow({ id: meme.id })">{{meme.text}}</a>
         <img ng-src="{{meme.img_url}}" alt="{{meme.text}}">
       </div>
-
     </div>
 </div>

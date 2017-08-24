@@ -25,13 +25,13 @@
     this.createPhoto = Photo.get()
     this.newMeme = new Meme()
     this.yourMemes = window.sessionStorage.getItem('savedMemes') || []
-    if (this.yourMemes !== []) {
+    if (this.yourMemes === window.sessionStorage.getItem('savedMemes')) {
       this.yourMemes = JSON.parse(window.sessionStorage.getItem('savedMemes'))
     }
 
     this.addMeme = function (newMeme) {
       var existingMemes = window.sessionStorage.getItem('savedMemes') || []
-      if (existingMemes !== []) {
+      if (existingMemes === window.sessionStorage.getItem('savedMemes')) {
         existingMemes = JSON.parse(window.sessionStorage.getItem('savedMemes'))
       }
       existingMemes.push(newMeme)
@@ -44,11 +44,12 @@
     }
 
     this.create = function () {
-      this.randomPhotoUrl = this.createPhoto.data.memes[Math.floor(Math.random() * this.createPhoto.data.memes.length)].url
-      this.newMeme.img_url = this.randomPhotoUrl
-      this.addMeme(this.newMeme)
-
+      if (this.newMeme.img_url === undefined) {
+        this.randomPhotoUrl = this.createPhoto.data.memes[Math.floor(Math.random() * this.createPhoto.data.memes.length)].url
+        this.newMeme.img_url = this.randomPhotoUrl
+      }
       this.newMeme.$save((newMeme) => {
+        this.addMeme(newMeme)
         $state.go('memeShow', {id: newMeme.id})
       })
     }
