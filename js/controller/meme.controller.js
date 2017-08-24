@@ -44,9 +44,10 @@
     }
 
     this.create = function () {
-      this.randomPhotoUrl = this.createPhoto.data.memes[Math.floor(Math.random() * this.createPhoto.data.memes.length)].url
-      this.newMeme.img_url = this.randomPhotoUrl
-
+      if (this.newMeme.img_url === undefined) {
+        this.randomPhotoUrl = this.createPhoto.data.memes[Math.floor(Math.random() * this.createPhoto.data.memes.length)].url
+        this.newMeme.img_url = this.randomPhotoUrl
+      }
       this.newMeme.$save((newMeme) => {
         this.addMeme(newMeme)
         $state.go('memeShow', {id: newMeme.id})
