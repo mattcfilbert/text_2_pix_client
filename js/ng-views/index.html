@@ -1,6 +1,7 @@
 <div class="index_page">
   <h2>new meme</h2>
 
+  <!-- It may be bad form to have style stuff in your html, yet here we are  -->
   <form>
     <div style="overflow: hidden; padding-right: .5em; float: left;">
       <input placeholder="text" data-ng-model="vm.newMeme.text" />
@@ -11,7 +12,7 @@
     </div>
     <button style="float: right" type="submit" data-ng-click="vm.create()">Create</button>
   </form>
-
+  <!-- Toggle between all memes and memes created in this session -->
   <button ng-click="yours = !yours">All/Your Memes</button>
     <div ng-hide="yours" class="memes">
       <h2 class="center">Meme List</h2>
