@@ -2,9 +2,14 @@
   <h2>new meme</h2>
 
   <form>
-    <input placeholder="text" data-ng-model="vm.newMeme.text" />
-    <input placeholder="picture" data-ng-model="vm.newMeme.img_url" />
-    <button type="submit" data-ng-click="vm.create()">Create</button>
+    <div style="overflow: hidden; padding-right: .5em; float: left;">
+      <input placeholder="text" data-ng-model="vm.newMeme.text" />
+      <input placeholder="picture" data-ng-model="vm.newMeme.img_url" />
+
+
+
+    </div>
+    <button style="float: right" type="submit" data-ng-click="vm.create()">Create</button>
   </form>
 
   <button ng-click="yours = !yours">All/Your Memes</button>
