@@ -31,7 +31,6 @@
 
     this.addMeme = function (newMeme) {
       var existingMemes = window.sessionStorage.getItem('savedMemes') || []
-      console.log(existingMemes[0].id)
       if (existingMemes === window.sessionStorage.getItem('savedMemes')) {
         existingMemes = JSON.parse(window.sessionStorage.getItem('savedMemes'))
       }
