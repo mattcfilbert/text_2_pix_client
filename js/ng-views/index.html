@@ -12,6 +12,7 @@
     <button style="float: right" type="submit" data-ng-click="vm.create()">Create</button>
   </form>
 
+  <button type="submit" data-ng-click="vm.create()">Create</button>
   <button ng-click="yours = !yours">All/Your Memes</button>
     <div ng-hide="yours" class="memes">
       <h2 class="center">Meme List</h2>
@@ -20,8 +21,8 @@
         <a ui-sref="memeShow({ id: meme.id })">{{meme.text}}</a>
         <img ng-src="{{meme.img_url}}" alt="{{meme.text}}">
       </div>
-
     </div>
+
     <div ng-show="yours" class="memes">
       <div class="center">
         <button ng-click="vm.memeClear()">Clear your memes</button>
@@ -32,6 +33,5 @@
         <a ui-sref="memeShow({ id: meme.id })">{{meme.text}}</a>
         <img ng-src="{{meme.img_url}}" alt="{{meme.text}}">
       </div>
-
     </div>
 </div>
