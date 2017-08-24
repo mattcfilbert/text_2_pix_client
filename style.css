@@ -48,6 +48,10 @@ header {
   background: #eee;
 }
 
+.center {
+  text-align: center;
+}
+
 .show_image {
   display: flex;
   align-items: center;
