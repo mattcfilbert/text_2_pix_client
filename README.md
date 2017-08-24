@@ -27,6 +27,8 @@ User's can see a history of their created memes!
 
 Full CRUD functionality for memes and comments (child element of memes)
 
+For more information on the planning process please visit https://github.com/jacobg1/text_2_pix_client/tree/master/planning
+
 CDNs:
 
 angular: https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js
