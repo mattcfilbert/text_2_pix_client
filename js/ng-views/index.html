@@ -15,6 +15,7 @@
   <button ng-click="yours = !yours">All/Your Memes</button>
     <div ng-hide="yours" class="memes">
       <h2 class="center">Meme List</h2>
+      <hr>
       <div class="meme" ng-repeat="meme in vm.memes | orderBy:'-created_at'">
         <a ui-sref="memeShow({ id: meme.id })">{{meme.text}}</a>
         <img ng-src="{{meme.img_url}}" alt="{{meme.text}}">
@@ -22,9 +23,12 @@
     </div>
 
     <div ng-show="yours" class="memes">
-      <button ng-click="vm.memeClear()">Clear your memes</button>
+      <div class="center">
+        <button ng-click="vm.memeClear()">Clear your memes</button>
+      </div>
       <h2 class="center">Your Memes</h2>
-      <div class="meme" ng-repeat="meme in vm.yourMemes">
+      <hr>
+      <div class="meme" ng-repeat="meme in vm.yourMemes | orderBy:'-created_at'">
         <a ui-sref="memeShow({ id: meme.id })">{{meme.text}}</a>
         <img ng-src="{{meme.img_url}}" alt="{{meme.text}}">
       </div>
