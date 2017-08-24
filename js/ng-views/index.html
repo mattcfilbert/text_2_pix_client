@@ -14,14 +14,13 @@
         <a ui-sref="memeShow({ id: meme.id })">{{meme.text}}</a>
         <img ng-src="{{meme.img_url}}" alt="{{meme.text}}">
       </div>
-
     </div>
+
     <div ng-show="yours" class="memes">
       <h2>Your Memes</h2>
       <div class="meme" ng-repeat="meme in vm.yourMemes">
         <a ui-sref="memeShow({ id: meme.id })">{{meme.text}}</a>
         <img ng-src="{{meme.img_url}}" alt="{{meme.text}}">
       </div>
-
     </div>
 </div>
